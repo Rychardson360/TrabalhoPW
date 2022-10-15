@@ -48,5 +48,5 @@ else{
 
 echo"<br> <br> <a href='tabela.php?'>Tabela de Imagens</a><br>";
 
-
+echo "<a href=\"excluir.php\"> <button> Excluir Imagens </button> </a>";
 ?>
