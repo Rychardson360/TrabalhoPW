@@ -83,27 +83,36 @@
                background-size: cover;
                background-position: center;
             }
+            div{
+               border: 1px solid black;
+               height: 300px;
+            }
     </style>
 </head>
 <body>
   <div id="main"><i>Galeria de Imóveis</i></div>
   <br>
     <div class="container">
-        <div class="row">
-            <div class="col" id="i01"> - </div>
-            <div class="col" id="i02"> - </div>
-            <div class="col" id="i03"> - </div>
-        </div>
-        <div class="row">
-            <div class="col" id="i04"> - </div>
-            <div class="col" id="i05"> - </div>
-            <div class="col" id="i06"> - </div>
-        </div>
-        <div class="row">
-            <div class="col" id="i07"> - </div>
-            <div class="col" id="i08"> - </div>
-            <div class="col" id="i09"> - </div>
-        </div> 
+    <?php
+  $percorrer = scandir('../Trabalho');
+  array_shift($percorrer);
+  array_shift($percorrer);
+  foreach($percorrer as $mudar){
+    if(strpos($mudar,'.')){}
+    else{
+        echo " <div class=\"row\">";
+        $exe = scandir($mudar);
+        array_shift($exe);
+        array_shift($exe);
+        foreach($exe as $select){
+          echo " <div class=\"col-sm\" style=\"background-image: url($mudar/$select);
+          background-size: cover;\">
+          </div>";
+      }
+      echo "</div>";
+    }
+  }
+?> 
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>   
 </body>
